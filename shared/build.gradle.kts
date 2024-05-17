@@ -45,8 +45,8 @@ kotlin {
         commonMain {
             dependencies {
                 api(libs.adaptive.core)
-                api(libs.adaptive.ktor)
-                api(libs.adaptive.ui)
+                api(libs.adaptive.lib.ktor)
+                api(libs.adaptive.ui.common)
             }
         }
     }
