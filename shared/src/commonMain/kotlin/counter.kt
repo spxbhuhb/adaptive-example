@@ -1,6 +1,3 @@
-package hu.simplexion.adaptive.example.ui
-
-import hu.simplexion.adaptive.example.api.CounterApi
 import hu.simplexion.adaptive.foundation.Adaptive
 import hu.simplexion.adaptive.foundation.producer.poll
 import hu.simplexion.adaptive.service.getService

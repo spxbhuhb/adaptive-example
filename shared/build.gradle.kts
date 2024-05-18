@@ -5,6 +5,11 @@ plugins {
     alias(libs.plugins.adaptive)
 }
 
+//adaptive {
+//    pluginDebug = true
+//    pluginLogDir = projectDir.toPath()
+//}
+
 kotlin {
 
     androidTarget {
@@ -47,6 +52,12 @@ kotlin {
                 api(libs.adaptive.core)
                 api(libs.adaptive.lib.ktor)
                 api(libs.adaptive.ui.common)
+            }
+        }
+
+        iosMain {
+            dependencies {
+                implementation(libs.ktor.client.darwin)
             }
         }
     }

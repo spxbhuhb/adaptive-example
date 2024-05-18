@@ -1,5 +1,3 @@
-package hu.simplexion.adaptive.example.worker
-
 import hu.simplexion.adaptive.server.builtin.WorkerImpl
 import hu.simplexion.adaptive.server.setting.dsl.setting
 import hu.simplexion.adaptive.utility.vmNowSecond

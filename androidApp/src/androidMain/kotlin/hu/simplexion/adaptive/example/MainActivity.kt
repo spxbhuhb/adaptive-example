@@ -1,11 +1,11 @@
 package hu.simplexion.adaptive.example
 
+import ExampleExports
 import android.os.Bundle
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
-import hu.simplexion.adaptive.example.ui.ExampleExports
-import hu.simplexion.adaptive.example.ui.counter
+import counter
 import hu.simplexion.adaptive.ktor.withWebSocketTransport
 import hu.simplexion.adaptive.log.JvmLogger
 import hu.simplexion.adaptive.ui.android.adapter.AdaptiveViewAdapter

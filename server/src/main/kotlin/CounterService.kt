@@ -1,7 +1,3 @@
-package hu.simplexion.adaptive.example.service
-
-import hu.simplexion.adaptive.example.api.CounterApi
-import hu.simplexion.adaptive.example.worker.CounterWorker
 import hu.simplexion.adaptive.server.builtin.ServiceImpl
 import hu.simplexion.adaptive.server.builtin.worker
 
