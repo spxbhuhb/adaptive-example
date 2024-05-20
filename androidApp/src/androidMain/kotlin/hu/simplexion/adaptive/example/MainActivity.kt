@@ -8,13 +8,13 @@ import androidx.appcompat.app.AppCompatActivity
 import counter
 import hu.simplexion.adaptive.ktor.withWebSocketTransport
 import hu.simplexion.adaptive.log.JvmLogger
-import hu.simplexion.adaptive.ui.android.adapter.AdaptiveViewAdapter
+import hu.simplexion.adaptive.ui.android.adapter.AdaptiveAndroidAdapter
 import hu.simplexion.adaptive.ui.android.adapter.android
 import hu.simplexion.adaptive.wireformat.withJson
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var adapter: AdaptiveViewAdapter
+    lateinit var adapter: AdaptiveAndroidAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() {
                 (it.logger as JvmLogger).println = true
             }
 
-        adapter = android(this, linearLayout, ExampleExports) {
+        adapter = android(this, linearLayout, ExampleExports, trace = true) {
             counter()
         }
 
