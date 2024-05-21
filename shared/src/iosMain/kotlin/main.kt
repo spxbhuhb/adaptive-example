@@ -12,7 +12,7 @@ fun main(rootView : UIView, trace : Boolean) {
 
     try {
         withJson()
-        withWebSocketTransport("http://localhost:8080/adaptive/service")
+        withWebSocketTransport("ws://localhost:8080/adaptive/service")
 
         ios(rootView, ExampleExports, trace = trace) {
             text("Hello Adaptive 2!")
