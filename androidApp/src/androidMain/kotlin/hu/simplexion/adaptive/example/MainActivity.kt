@@ -5,12 +5,14 @@ import android.os.Bundle
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
-import counter
-import hu.simplexion.adaptive.ktor.withWebSocketTransport
-import hu.simplexion.adaptive.log.JvmLogger
-import hu.simplexion.adaptive.ui.android.adapter.AdaptiveAndroidAdapter
-import hu.simplexion.adaptive.ui.android.adapter.android
-import hu.simplexion.adaptive.wireformat.withJson
+import hu.simplexion.adaptive.foundation.producer.poll
+import hu.simplexion.adaptive.ui.common.android.adapter.AdaptiveAndroidAdapter
+import hu.simplexion.adaptive.ui.common.android.adapter.android
+import hu.simplexion.adaptive.ui.common.fragment.pixel
+import hu.simplexion.adaptive.ui.common.fragment.text
+import hu.simplexion.adaptive.ui.common.instruction.BoundingRect
+import kotlinx.datetime.Clock
+import kotlin.time.Duration.Companion.seconds
 
 class MainActivity : AppCompatActivity() {
 
@@ -27,14 +29,18 @@ class MainActivity : AppCompatActivity() {
             ViewGroup.LayoutParams.MATCH_PARENT
         )
 
-        withJson()
-        withWebSocketTransport("ws://10.0.2.2:8080/adaptive/service", trace = true)
-            .also {
-                (it.logger as JvmLogger).println = true
-            }
+//        withJson()
+//        withWebSocketTransport("ws://10.0.2.2:8080/adaptive/service", trace = true)
+//            .also {
+//                (it.logger as JvmLogger).println = true
+//            }
 
         adapter = android(this, linearLayout, ExampleExports, trace = true) {
-            counter()
+            val time = poll(1.seconds, Clock.System.now()) { Clock.System.now() }
+            pixel {
+                text("Hello Adaptive 2!", BoundingRect(200f, 100f, 300f, 100f))
+                text("Now: $time", BoundingRect(200f, 200f, 1000f, 100f))
+            }
         }
 
         // Set the TextView as the content view of the activity

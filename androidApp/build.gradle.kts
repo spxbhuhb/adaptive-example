@@ -1,5 +1,3 @@
-import com.android.build.gradle.internal.ide.kmp.KotlinAndroidSourceSetMarker.Companion.android
-
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidApplication)
@@ -29,6 +27,7 @@ kotlin {
                 implementation("androidx.constraintlayout:constraintlayout:2.1.4")
                 implementation("com.google.android.material:material:1.12.0")
                 implementation(project.libs.ktor.client.okhttp)
+                implementation(project.libs.adaptive.core)
                 implementation(projects.shared)
             }
         }
