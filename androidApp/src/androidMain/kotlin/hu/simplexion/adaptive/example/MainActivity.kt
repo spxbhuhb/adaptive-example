@@ -5,19 +5,18 @@ import android.os.Bundle
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
+import hu.simplexion.adaptive.foundation.instruction.Trace
 import hu.simplexion.adaptive.foundation.producer.poll
 import hu.simplexion.adaptive.ui.common.android.adapter.AdaptiveAndroidAdapter
 import hu.simplexion.adaptive.ui.common.android.adapter.android
-import hu.simplexion.adaptive.ui.common.fragment.clickable
-import hu.simplexion.adaptive.ui.common.fragment.pixel
+import hu.simplexion.adaptive.ui.common.fragment.box
 import hu.simplexion.adaptive.ui.common.fragment.text
 import hu.simplexion.adaptive.ui.common.instruction.BackgroundGradient
 import hu.simplexion.adaptive.ui.common.instruction.BorderRadius
-import hu.simplexion.adaptive.ui.common.instruction.BoundingRect
 import hu.simplexion.adaptive.ui.common.instruction.Color
+import hu.simplexion.adaptive.ui.common.instruction.Frame
 import kotlinx.datetime.Clock
-import kotlin.time.Duration.Companion.seconds
-
+import kotlin.time.Duration.Companion.milliseconds
 
 val lightGreen = Color(0xA0DE6F)
 val mediumGreen = Color(0x53C282)
@@ -27,6 +26,7 @@ val purple = Color(0xA644FF)
 
 val greenGradient = BackgroundGradient(90, lightGreen, mediumGreen)
 val borderRadius = BorderRadius(8)
+val trace = Trace(Regex(".*"))
 
 class MainActivity : AppCompatActivity() {
 
@@ -37,7 +37,6 @@ class MainActivity : AppCompatActivity() {
 
         val rootView = LinearLayout(this).also {
             it.orientation = LinearLayout.VERTICAL
-            it.setBackgroundColor(android.graphics.Color.parseColor("#FF5733"))
             it.layoutParams = ViewGroup.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT,
                 ViewGroup.LayoutParams.MATCH_PARENT
@@ -53,15 +52,13 @@ class MainActivity : AppCompatActivity() {
 //            }
 
         window.decorView.post {
-            adapter = android(this, rootView, ExampleExports, trace = false) {
+            adapter = android(this, rootView, ExampleExports) {
 
-                val time = poll(1.seconds, Clock.System.now()) { Clock.System.now() }
+                val time = poll(50.milliseconds, Clock.System.now()) { Clock.System.now() }
 
-                pixel(greenGradient, borderRadius) {
-                    clickable(onClick = { println("hello") }) {
-                        text("Hello Adaptive 2!", BoundingRect(200f, 100f, 300f, 100f))
-                    }
-                    text("Now: $time", BoundingRect(200f, 200f, 1000f, 100f))
+                box(greenGradient, borderRadius, trace) {
+                    text("Hello Adaptive 2!", Frame(200f, 200f, 300f, 100f), trace)
+                    text("Now: $time", Frame(100f, 200f, 1000f, 100f), trace)
                 }
             }
         }
