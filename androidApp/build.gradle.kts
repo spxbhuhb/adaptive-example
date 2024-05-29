@@ -4,6 +4,12 @@ plugins {
     id("hu.simplexion.adaptive")
 }
 
+adaptive {
+    resources {
+        generateResClass = never
+    }
+}
+
 kotlin {
     androidTarget {
         compilations.all {

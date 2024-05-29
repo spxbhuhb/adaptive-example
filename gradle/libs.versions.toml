@@ -2,7 +2,7 @@
 
 ios-support = "yes"
 
-adaptive = "2024.05.17-SNAPSHOT"
+adaptive = "2024.05.29.1-SNAPSHOT"
 adaptive-example = "2024.05.20-SNAPSHOT"
 agp = "8.4.0"
 android-compileSdk = "34"
@@ -14,7 +14,7 @@ androidx-core-ktx = "1.13.0"
 androidx-espresso-core = "3.5.1"
 androidx-test-junit = "1.1.5"
 junit = "4.13.2"
-kotlin = "1.9.24"
+kotlin = "2.0.0"
 ktor = "2.3.10"
 logback = "1.2.11"
 

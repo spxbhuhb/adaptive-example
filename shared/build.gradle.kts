@@ -5,10 +5,13 @@ plugins {
     alias(libs.plugins.adaptive)
 }
 
-//adaptive {
+adaptive {
 //    pluginDebug = true
 //    pluginLogDir = projectDir.toPath()
-//}
+    resources {
+        publicResClass = true
+    }
+}
 
 kotlin {
 
