@@ -1,7 +1,7 @@
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidApplication)
-    id("hu.simplexion.adaptive")
+    alias(libs.plugins.adaptive)
 }
 
 adaptive {

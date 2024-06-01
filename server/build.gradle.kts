@@ -2,7 +2,7 @@ plugins {
     alias(libs.plugins.kotlinJvm)
     alias(libs.plugins.ktor)
     application
-    id("hu.simplexion.adaptive")
+    alias(libs.plugins.adaptive)
 }
 
 group = "hu.simplexion.adaptive.example"

@@ -2,8 +2,8 @@
 
 ios-support = "yes"
 
-adaptive = "2024.05.29.1-SNAPSHOT"
-adaptive-example = "2024.05.20-SNAPSHOT"
+adaptive = "2024.06.01-SNAPSHOT"
+adaptive-example = "2024.06.01-SNAPSHOT"
 agp = "8.4.0"
 android-compileSdk = "34"
 android-minSdk = "26"
@@ -44,4 +44,4 @@ cocoapods = { id = "org.jetbrains.kotlin.native.cocoapods", version.ref = "kotli
 kotlinJvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 ktor = { id = "io.ktor.plugin", version.ref = "ktor" }
 kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
-adaptive = { id = "hu.simplexion.adaptive", version.ref = "adaptive"}
+adaptive = { id = "hu.simplexion.adaptive", version.ref = "adaptive" }
