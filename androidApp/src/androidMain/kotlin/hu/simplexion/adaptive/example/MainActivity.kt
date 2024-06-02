@@ -8,7 +8,9 @@ import android.os.Bundle
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
+import hu.simplexion.adaptive.foundation.Adaptive
 import hu.simplexion.adaptive.foundation.instruction.AdaptiveInstruction
+import hu.simplexion.adaptive.foundation.instruction.Name
 import hu.simplexion.adaptive.foundation.instruction.Trace
 import hu.simplexion.adaptive.foundation.producer.poll
 import hu.simplexion.adaptive.ui.common.android.adapter.AdaptiveAndroidAdapter
@@ -40,6 +42,7 @@ import hu.simplexion.adaptive.ui.common.instruction.externalLink
 import hu.simplexion.adaptive.ui.common.instruction.fr
 import hu.simplexion.adaptive.ui.common.instruction.gridCol
 import hu.simplexion.adaptive.ui.common.instruction.onClick
+import hu.simplexion.adaptive.ui.common.instruction.sp
 import kotlinx.datetime.Clock
 import kotlin.time.Duration.Companion.milliseconds
 import kotlin.time.Duration.Companion.seconds
@@ -51,13 +54,14 @@ val mediumGray = Color(0x666666)
 val purple = Color(0xA644FF)
 val white = Color(0xffffff)
 
-val textSmall = FontSize(13f)
+val textSmall = FontSize(13.sp)
+val textMedium = FontSize(15.sp)
 val whiteBorder = Border(white)
 val bold = FontWeight(700)
 val smallWhiteNoWrap = arrayOf(white, textSmall, TextWrap.NoWrap)
 
 val greenGradient = BackgroundGradient(90, lightGreen, mediumGreen)
-val borderRadius = BorderRadius(8)
+val borderRadius = BorderRadius(8.dp)
 val traceAll = Trace(Regex(".*"))
 val traceLayout = Trace(Regex("layout"), Regex("measure.*"))
 
@@ -90,51 +94,54 @@ class MainActivity : AppCompatActivity() {
 
         window.decorView.post {
             adapter = android(this, rootView, ExampleExports, trace = traceLayout) {
-
-                val time = poll(500.seconds, Clock.System.now()) { Clock.System.now() }
-
-                box {
-                    image(Res.drawable.background)
-
-                    grid(
-                        RowTemplate(260.dp, 1.fr, 100.dp, 100.dp),
-                        ColTemplate(1.fr)
-                    ) {
-                        row(AlignItems.End, JustifyContent.Center, Padding(bottom = 30)) {
-                            image(Res.drawable.logo, Size(350, 350))
-                        }
-
-                        row(AlignItems.Start, JustifyContent.Center) {
-                            text("Good Morning", white, FontSize(40f), LetterSpacing(-0.02f))
-                        }
-
-                        grid(
-                            RowTemplate(50.dp),
-                            ColTemplate(32.dp, 1.fr, 32.dp, 1.fr, 32.dp)
-                        ) {
-
-                            row(2.gridCol, greenGradient, borderRadius, *center, /* onClick { println("Sign Up") } */) {
-                                text("Sign Up", white)
-                            }
-
-                            row(4.gridCol, whiteBorder, borderRadius, *center) {
-                                text("Sign In", white)
-                            }
-
-                        }
-
-                        column(AlignItems.Center, Padding(right = 32f, left = 32f)) {
-                            row {
-                                text("By joining you agree to our", *smallWhiteNoWrap, Padding(right = 6f))
-                                text("Terms of Service", *smallWhiteNoWrap, bold, Padding(right = 6f))
-                                text("and", *smallWhiteNoWrap)
-                            }
-                            text("Privacy Policy", *smallWhiteNoWrap, bold)
-                        }
-                    }
-                }
+                // val time = poll(500.seconds, Clock.System.now()) { Clock.System.now() }
+                login()
             }
         }
 
+    }
+}
+
+@Adaptive
+fun login() {
+    box {
+        image(Res.drawable.background)
+
+        grid(
+            RowTemplate(260.dp, 1.fr, 100.dp, 100.dp),
+            ColTemplate(1.fr)
+        ) {
+            row(AlignItems.End, JustifyContent.Center, Padding(bottom = 30.dp)) {
+                image(Res.drawable.logo, Size(92.dp, 92.dp))
+            }
+
+            row(AlignItems.Start, JustifyContent.Center) {
+                text("Good Morning", white, FontSize(40.sp), LetterSpacing(-0.02f))
+            }
+
+            grid(
+                RowTemplate(50.dp),
+                ColTemplate(32.dp, 1.fr, 32.dp, 1.fr, 32.dp)
+            ) {
+
+                row(2.gridCol, greenGradient, borderRadius, *center, onClick { println("Sign Up") }) {
+                    text("Sign Up", white, textMedium)
+                }
+
+                row(4.gridCol, whiteBorder, borderRadius, *center) {
+                    text("Sign In", white, textMedium)
+                }
+
+            }
+
+            column(AlignItems.Center, Padding(right = 32.dp, left = 32.dp), Name("text-col")) {
+                row(Name("text-row")) {
+                    text("By joining you agree to our", *smallWhiteNoWrap, Padding(right = 6.dp), Name("agree"))
+                    text("Terms of Service", *smallWhiteNoWrap, bold, Padding(right = 6.dp), Name("terms"))
+                    text("and", *smallWhiteNoWrap, Name("and"))
+                }
+                text("Privacy Policy", *smallWhiteNoWrap, bold, Name("privacy"))
+            }
+        }
     }
 }
