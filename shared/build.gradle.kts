@@ -5,6 +5,8 @@ plugins {
     alias(libs.plugins.adaptive)
 }
 
+version = "2024.06.04-SNAPSHOT"
+
 adaptive {
 //    pluginDebug = true
 //    pluginLogDir = projectDir.toPath()
@@ -39,6 +41,9 @@ kotlin {
             iosTarget.binaries.framework {
                 baseName = "Shared"
                 isStatic = true
+                // see https://youtrack.jetbrains.com/issue/KT-56152
+                binaryOption("bundleId", "${project.group}.${project.name}")
+                binaryOption("bundleVersion", version.toString().substringBefore('-'))
             }
         }
     }
