@@ -4,15 +4,15 @@ import hu.simplexion.adaptive.foundation.instruction.AdaptiveInstruction
 import hu.simplexion.adaptive.foundation.instruction.Trace
 import hu.simplexion.adaptive.ui.common.instruction.AlignItems
 import hu.simplexion.adaptive.ui.common.instruction.BackgroundColor
-import hu.simplexion.adaptive.ui.common.instruction.BackgroundGradient
-import hu.simplexion.adaptive.ui.common.instruction.Border
-import hu.simplexion.adaptive.ui.common.instruction.BorderRadius
 import hu.simplexion.adaptive.ui.common.instruction.Color
 import hu.simplexion.adaptive.ui.common.instruction.FontSize
 import hu.simplexion.adaptive.ui.common.instruction.FontWeight
 import hu.simplexion.adaptive.ui.common.instruction.JustifyContent
 import hu.simplexion.adaptive.ui.common.instruction.TextWrap
+import hu.simplexion.adaptive.ui.common.instruction.border
+import hu.simplexion.adaptive.ui.common.instruction.cornerRadius
 import hu.simplexion.adaptive.ui.common.instruction.dp
+import hu.simplexion.adaptive.ui.common.instruction.leftToRightGradient
 import hu.simplexion.adaptive.ui.common.instruction.sp
 import kotlinx.datetime.Clock
 import kotlinx.datetime.TimeZone
@@ -27,22 +27,22 @@ val Int.threeDigits
 
 fun now() = Clock.System.now().toLocalDateTime(TimeZone.currentSystemDefault())
 
-val black = Color(0x000000)
-val white = Color(0xffffff)
-val lightGreen = Color(0xA0DE6F)
-val mediumGreen = Color(0x53C282)
-val lightGray = Color(0xd8d8d8)
-val mediumGray = Color(0x666666)
-val purple = Color(0xA644FF)
+val black = Color(0x000000u)
+val white = Color(0xffffffu)
+val lightGreen = Color(0xA0DE6Fu)
+val mediumGreen = Color(0x53C282u)
+val lightGray = Color(0xd8d8d8u)
+val mediumGray = Color(0x666666u)
+val purple = Color(0xA644FFu)
 
 val blackBackground = BackgroundColor(black)
 val mediumGreenBackground = BackgroundColor(mediumGreen)
-val greenGradient = BackgroundGradient(90, lightGreen, mediumGreen)
-val borderRadius = BorderRadius(8.dp)
+val greenGradient = leftToRightGradient(lightGreen, mediumGreen)
+val borderRadius = cornerRadius(8.dp)
 
 val textSmall = FontSize(13.sp)
 val textMedium = FontSize(15.sp)
-val whiteBorder = Border(white)
+val whiteBorder = border(white)
 val bold = FontWeight(700)
 val smallWhiteNoWrap = arrayOf(white, textSmall, TextWrap.NoWrap)
 

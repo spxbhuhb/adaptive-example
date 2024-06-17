@@ -3,8 +3,8 @@
  */
 
 import hu.simplexion.adaptive.example.shared.login
-import hu.simplexion.adaptive.ui.common.uikit.ios
-import hu.simplexion.adaptive.ui.common.uikit.resource.withIosResources
+import hu.simplexion.adaptive.ui.common.ios
+import hu.simplexion.adaptive.ui.common.platform.withIosResources
 import platform.UIKit.UIView
 
 fun main(rootView : UIView, trace : Boolean) {
@@ -15,7 +15,7 @@ fun main(rootView : UIView, trace : Boolean) {
 
         withIosResources()
 
-        ios(rootView, ExampleExports) {
+        ios(rootView) {
             login()
         }
 
