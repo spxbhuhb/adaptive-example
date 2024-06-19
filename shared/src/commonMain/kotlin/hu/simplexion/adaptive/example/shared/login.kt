@@ -13,7 +13,6 @@ import hu.simplexion.adaptive.ui.common.fragment.row
 import hu.simplexion.adaptive.ui.common.fragment.text
 import hu.simplexion.adaptive.ui.common.instruction.AlignItems
 import hu.simplexion.adaptive.ui.common.instruction.FontSize
-import hu.simplexion.adaptive.ui.common.instruction.JustifyContent
 import hu.simplexion.adaptive.ui.common.instruction.Padding
 import hu.simplexion.adaptive.ui.common.instruction.Size
 import hu.simplexion.adaptive.ui.common.instruction.colTemplate
@@ -31,9 +30,13 @@ import hu.simplexion.adaptive.ui.common.instruction.paddingTop
 import hu.simplexion.adaptive.ui.common.instruction.rowTemplate
 import hu.simplexion.adaptive.ui.common.instruction.sp
 import kotlinx.datetime.LocalDateTime
+import kotlin.experimental.ExperimentalObjCRefinement
+import kotlin.native.HiddenFromObjC
 import kotlin.time.Duration.Companion.seconds
 
+@OptIn(ExperimentalObjCRefinement::class)
 @Adaptive
+@HiddenFromObjC
 fun login() {
 
     var counter = 0
@@ -62,13 +65,13 @@ fun login() {
                     2.gridCol,
                     mediumGreenBackground,
                     borderRadius,
-                    *center,
+                    AlignItems.center,
                     onClick { counter++ }
                 ) {
                     text("Snooze", white, textMedium, noSelect)
                 }
 
-                row(4.gridCol, whiteBorder, borderRadius, *center) {
+                row(4.gridCol, whiteBorder, borderRadius, AlignItems.center) {
                     text("Sleepiness: $counter", white, textMedium)
                 }
             }
@@ -80,28 +83,28 @@ fun login() {
 
 @Adaptive
 private fun logo() {
-    row(AlignItems.End, JustifyContent.Center, paddingBottom(20.dp)) {
+    row(AlignItems.bottomCenter, paddingBottom(20.dp)) {
         image(Res.drawable.logo, Size(92.dp, 92.dp))
     }
 }
 
 @Adaptive
 private fun title() {
-    row(AlignItems.Start, JustifyContent.Center) {
+    row(AlignItems.center) {
         text("Good Morning", white, FontSize(40.sp), letterSpacing(-0.02))
     }
 }
 
 @Adaptive
 private fun time(timeText: String) {
-    column(AlignItems.Center, JustifyContent.Start, paddingTop(12.dp)) {
+    column(AlignItems.topCenter, paddingTop(12.dp)) {
         text(timeText, white, fontSize(80.sp), letterSpacing(-0.02))
     }
 }
 
 @Adaptive
 private fun progress(time: LocalDateTime) {
-    row(*center) {
+    row(AlignItems.center) {
         for (i in 0..time.second) {
             text(if (i % 10 == 0) "|" else ".", white)
         }
@@ -110,9 +113,9 @@ private fun progress(time: LocalDateTime) {
 
 @Adaptive
 private fun messages(time: LocalDateTime, counter: Int) {
-    column(*center) {
+    column(AlignItems.center) {
         if (time.second % 2 == 1) {
-            row(AlignItems.Start, JustifyContent.Center, greenGradient, borderRadius) {
+            row(AlignItems.center, greenGradient, borderRadius) {
                 text("What an odd second!", white, Padding(12.dp))
             }
         }
@@ -126,7 +129,7 @@ private fun messages(time: LocalDateTime, counter: Int) {
 
 @Adaptive
 private fun terms() {
-    column(AlignItems.Center, padding(right = 32.dp, left = 32.dp, top = 12.dp)) {
+    column(AlignItems.center, padding(right = 32.dp, left = 32.dp, top = 12.dp)) {
         row {
             text("By joining you agree to our", *smallWhiteNoWrap, paddingRight(6.dp))
             text("Terms of Service", *smallWhiteNoWrap, bold, paddingRight(6.dp))

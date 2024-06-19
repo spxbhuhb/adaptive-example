@@ -1,13 +1,10 @@
 package hu.simplexion.adaptive.example.shared
 
-import hu.simplexion.adaptive.foundation.instruction.AdaptiveInstruction
 import hu.simplexion.adaptive.foundation.instruction.Trace
-import hu.simplexion.adaptive.ui.common.instruction.AlignItems
 import hu.simplexion.adaptive.ui.common.instruction.BackgroundColor
 import hu.simplexion.adaptive.ui.common.instruction.Color
 import hu.simplexion.adaptive.ui.common.instruction.FontSize
 import hu.simplexion.adaptive.ui.common.instruction.FontWeight
-import hu.simplexion.adaptive.ui.common.instruction.JustifyContent
 import hu.simplexion.adaptive.ui.common.instruction.TextWrap
 import hu.simplexion.adaptive.ui.common.instruction.border
 import hu.simplexion.adaptive.ui.common.instruction.cornerRadius
@@ -46,6 +43,5 @@ val whiteBorder = border(white)
 val bold = FontWeight(700)
 val smallWhiteNoWrap = arrayOf(white, textSmall, TextWrap.NoWrap)
 
-val center = arrayOf<AdaptiveInstruction>(AlignItems.Center, JustifyContent.Center)
 val traceAll = Trace(Regex(".*"))
 val traceLayout = Trace(Regex("layout.*"), Regex("measure.*"))
