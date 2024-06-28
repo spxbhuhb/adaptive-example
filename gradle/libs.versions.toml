@@ -21,7 +21,9 @@ logback = "1.2.11"
 [libraries]
 adaptive-core = { module = "hu.simplexion.adaptive:adaptive-core", version.ref = "adaptive" }
 adaptive-lib-ktor = { module = "hu.simplexion.adaptive:adaptive-lib-ktor", version.ref = "adaptive" }
+adaptive-lib-sandbox = { module = "hu.simplexion.adaptive:adaptive-lib-sandbox", version.ref = "adaptive" }
 adaptive-ui-common = { module = "hu.simplexion.adaptive:adaptive-ui-common", version.ref = "adaptive" }
+
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
 kotlin-test-junit = { module = "org.jetbrains.kotlin:kotlin-test-junit", version.ref = "kotlin" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }

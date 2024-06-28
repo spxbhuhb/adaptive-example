@@ -2,7 +2,9 @@ package hu.simplexion.adaptive.example.shared
 
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
+import hu.simplexion.adaptive.lib.sandbox.ui.mobile.goodMorning
 import hu.simplexion.adaptive.ui.common.android
+import hu.simplexion.adaptive.ui.common.fragment.box
 import hu.simplexion.adaptive.ui.common.platform.withAndroidResources
 
 fun AppCompatActivity.main(rootView: ViewGroup) {
@@ -16,7 +18,9 @@ fun AppCompatActivity.main(rootView: ViewGroup) {
 
     window.decorView.post {
         android(this, rootView) {
-            login()
+            box {
+                goodMorning()
+            }
         }
     }
 }

@@ -59,6 +59,7 @@ kotlin {
             dependencies {
                 api(libs.adaptive.core)
                 api(libs.adaptive.lib.ktor)
+                api(libs.adaptive.lib.sandbox)
                 api(libs.adaptive.ui.common)
             }
         }
