@@ -29,7 +29,7 @@ kotlin {
 
     js(IR) {
         browser()
-        binaries.executable()
+        binaries.library()
     }
 
     if (libs.versions.ios.support.get() != "none") {

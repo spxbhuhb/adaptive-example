@@ -29,6 +29,11 @@ value other than `none` adds support for iOS.
 
 This is also useful when you don't want to wait for the iOS linking during development.
 
+> [!NOTE]
+> 
+> You cannot start the iOS app from Android Studio at the moment. I haven't checked yet why that fails.
+> 
+
 ## License
 
 > Copyright (c) 2024 Simplexion Kft, Hungary and contributors
