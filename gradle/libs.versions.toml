@@ -2,8 +2,8 @@
 
 ios-support = "yes"
 
-adaptive = "2024.06.01-SNAPSHOT"
-adaptive-example = "2024.06.01-SNAPSHOT"
+adaptive = "2024.07.06-SNAPSHOT"
+adaptive-example = "2024.07.06-SNAPSHOT"
 agp = "8.4.0"
 android-compileSdk = "34"
 android-minSdk = "26"
@@ -22,7 +22,7 @@ logback = "1.2.11"
 adaptive-core = { module = "hu.simplexion.adaptive:adaptive-core", version.ref = "adaptive" }
 adaptive-lib-ktor = { module = "hu.simplexion.adaptive:adaptive-lib-ktor", version.ref = "adaptive" }
 adaptive-lib-sandbox = { module = "hu.simplexion.adaptive:adaptive-lib-sandbox", version.ref = "adaptive" }
-adaptive-ui-common = { module = "hu.simplexion.adaptive:adaptive-ui-common", version.ref = "adaptive" }
+adaptive-ui = { module = "hu.simplexion.adaptive:adaptive-ui", version.ref = "adaptive" }
 
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
 kotlin-test-junit = { module = "org.jetbrains.kotlin:kotlin-test-junit", version.ref = "kotlin" }

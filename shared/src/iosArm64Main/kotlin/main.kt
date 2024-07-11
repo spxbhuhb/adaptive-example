@@ -9,7 +9,7 @@ import hu.simplexion.adaptive.ui.common.platform.withIosResources
 import platform.UIKit.UIView
 
 
-fun main(rootView : UIView, trace : Boolean) {
+fun main(rootView: UIView, trace: Boolean) {
 
     try {
         //withJson()
@@ -23,7 +23,7 @@ fun main(rootView : UIView, trace : Boolean) {
             }
         }
 
-    } catch (e : Exception) {
+    } catch (e: Exception) {
         e.printStackTrace()
     }
 

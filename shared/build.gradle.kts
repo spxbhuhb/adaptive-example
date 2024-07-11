@@ -60,7 +60,7 @@ kotlin {
                 api(libs.adaptive.core)
                 api(libs.adaptive.lib.ktor)
                 api(libs.adaptive.lib.sandbox)
-                api(libs.adaptive.ui.common)
+                api(libs.adaptive.ui)
             }
         }
 
