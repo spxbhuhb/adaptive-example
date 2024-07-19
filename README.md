@@ -2,10 +2,10 @@ Example project for [Adaptive](https://github.com/spxbhuhb/adaptive).
 
 A simple Adaptive application with:
 
-- server (works)
+- server (no idea, haven't tried for a while)
 - browser app (works)
 - android app (works)
-- ios app (in progress)
+- ios app (works when gradle publish does not leave out the KLib)
 
 ## Setup and Run
 
