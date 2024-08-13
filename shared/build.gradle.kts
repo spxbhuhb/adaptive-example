@@ -79,7 +79,7 @@ kotlin {
 }
 
 android {
-    namespace = "hu.simplexion.adaptive.example.shared"
+    namespace = "fun.adaptive.example.shared"
     compileSdk = libs.versions.android.compileSdk.get().toInt()
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11

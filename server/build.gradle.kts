@@ -5,7 +5,7 @@ plugins {
     alias(libs.plugins.adaptive)
 }
 
-group = "hu.simplexion.adaptive.example"
+group = "`fun`.adaptive.example"
 version = "1.0.0"
 
 application {

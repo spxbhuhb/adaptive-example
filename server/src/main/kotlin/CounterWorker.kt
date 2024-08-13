@@ -1,6 +1,6 @@
-import hu.simplexion.adaptive.server.builtin.WorkerImpl
-import hu.simplexion.adaptive.server.setting.dsl.setting
-import hu.simplexion.adaptive.utility.vmNowSecond
+import `fun`.adaptive.server.builtin.WorkerImpl
+import `fun`.adaptive.server.setting.dsl.setting
+import `fun`.adaptive.utility.vmNowSecond
 import kotlinx.coroutines.delay
 import java.util.concurrent.atomic.AtomicInteger
 

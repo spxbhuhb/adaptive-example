@@ -1,11 +1,11 @@
-package hu.simplexion.adaptive.example.shared
+package `fun`.adaptive.example.shared
 
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
-import hu.simplexion.adaptive.lib.sandbox.ui.mobile.goodMorning
-import hu.simplexion.adaptive.ui.common.android
-import hu.simplexion.adaptive.ui.common.fragment.box
-import hu.simplexion.adaptive.ui.common.platform.withAndroidResources
+import `fun`.adaptive.lib.sandbox.ui.mobile.goodMorning
+import `fun`.adaptive.ui.common.android
+import `fun`.adaptive.ui.common.fragment.box
+import `fun`.adaptive.ui.common.platform.withAndroidResources
 
 fun AppCompatActivity.main(rootView: ViewGroup) {
 

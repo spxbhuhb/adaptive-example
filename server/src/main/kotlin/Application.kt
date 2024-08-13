@@ -1,10 +1,10 @@
-import hu.simplexion.adaptive.ktor.KtorWorker
-import hu.simplexion.adaptive.server.builtin.service
-import hu.simplexion.adaptive.server.builtin.worker
-import hu.simplexion.adaptive.server.server
-import hu.simplexion.adaptive.server.setting.dsl.inline
-import hu.simplexion.adaptive.server.setting.dsl.settings
-import hu.simplexion.adaptive.wireformat.withJson
+import `fun`.adaptive.ktor.KtorWorker
+import `fun`.adaptive.server.builtin.service
+import `fun`.adaptive.server.builtin.worker
+import `fun`.adaptive.server.server
+import `fun`.adaptive.server.setting.dsl.inline
+import `fun`.adaptive.server.setting.dsl.settings
+import `fun`.adaptive.wireformat.withJson
 
 fun main() {
 

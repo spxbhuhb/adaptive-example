@@ -1,4 +1,4 @@
-import hu.simplexion.adaptive.service.ServiceApi
+import `fun`.adaptive.service.ServiceApi
 
 @ServiceApi
 interface CounterApi {

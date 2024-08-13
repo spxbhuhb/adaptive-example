@@ -1,12 +1,3 @@
-import hu.simplexion.adaptive.foundation.Adaptive
-import hu.simplexion.adaptive.foundation.producer.poll
-import hu.simplexion.adaptive.service.getService
-import hu.simplexion.adaptive.ui.common.fragment.text
-import kotlinx.datetime.Clock
-import kotlin.time.Duration.Companion.nanoseconds
-import kotlin.time.Duration.Companion.seconds
-
-
 //val counterService = getService<CounterApi>()
 //
 //fun now() = Clock.System.now()

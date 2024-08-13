@@ -1,5 +1,5 @@
-import hu.simplexion.adaptive.server.builtin.ServiceImpl
-import hu.simplexion.adaptive.server.builtin.worker
+import `fun`.adaptive.server.builtin.ServiceImpl
+import `fun`.adaptive.server.builtin.worker
 
 class CounterService : CounterApi, ServiceImpl<CounterService> {
 

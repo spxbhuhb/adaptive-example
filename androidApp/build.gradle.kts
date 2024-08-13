@@ -45,7 +45,7 @@ kotlin {
 }
 
 android {
-    namespace = "hu.simplexion.adaptive.example"
+    namespace = "fun.adaptive.example"
     compileSdk = libs.versions.android.compileSdk.get().toInt()
 
     sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
@@ -53,7 +53,7 @@ android {
     sourceSets["main"].resources.srcDirs("src/commonMain/resources")
 
     defaultConfig {
-        applicationId = "hu.simplexion.adaptive.example"
+        applicationId = "fun.adaptive.example"
         minSdk = libs.versions.android.minSdk.get().toInt()
         targetSdk = libs.versions.android.targetSdk.get().toInt()
         versionCode = 1
