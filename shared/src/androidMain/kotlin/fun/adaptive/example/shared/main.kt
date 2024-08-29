@@ -3,9 +3,9 @@ package `fun`.adaptive.example.shared
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import `fun`.adaptive.lib.sandbox.ui.mobile.goodMorning
-import `fun`.adaptive.ui.common.android
-import `fun`.adaptive.ui.common.fragment.box
-import `fun`.adaptive.ui.common.platform.withAndroidResources
+import `fun`.adaptive.ui.android
+import `fun`.adaptive.ui.api.box
+import `fun`.adaptive.ui.platform.withAndroidResources
 
 fun AppCompatActivity.main(rootView: ViewGroup) {
 

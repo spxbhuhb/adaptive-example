@@ -3,9 +3,9 @@
  */
 
 import `fun`.adaptive.lib.sandbox.ui.mobile.goodMorning
-import `fun`.adaptive.ui.common.fragment.box
-import `fun`.adaptive.ui.common.ios
-import `fun`.adaptive.ui.common.platform.withIosResources
+import `fun`.adaptive.ui.api.box
+import `fun`.adaptive.ui.ios
+import `fun`.adaptive.ui.platform.withIosResources
 import platform.UIKit.UIView
 
 

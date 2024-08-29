@@ -4,9 +4,9 @@
 
 import `fun`.adaptive.lib.sandbox.ui.mobile.goodMorning
 import `fun`.adaptive.lib.sandbox.ui.mobile.mobileExample
-import `fun`.adaptive.lib.sandbox.ui.withSandbox
-import `fun`.adaptive.ui.common.browser
-import `fun`.adaptive.ui.common.platform.withJsResources
+import `fun`.adaptive.lib.sandbox.withSandbox
+import `fun`.adaptive.ui.browser
+import `fun`.adaptive.ui.platform.withJsResources
 
 fun main() {
 
